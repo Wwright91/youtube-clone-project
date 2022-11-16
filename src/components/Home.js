@@ -31,11 +31,15 @@ const Home = () => {
   console.log(apidata);
 
   return (
-    <div>
-      {apidata.map((video) => {
+    <div className="home">
+      {apidata.map(({ id, snippet }) => {
         return (
-          <div key={video.id}>
-            <YouTube videoId={video.id} opts={opts} onReady={onReady} />
+          // <div key={video.id}>
+          //   <YouTube videoId={video.id} opts={opts} onReady={onReady} />
+          // </div>
+          <div className="card">
+            <img src={snippet.thumbnails.high.url} />
+            <h4>{snippet.title}</h4>
           </div>
         );
       })}
