@@ -1,0 +1,19 @@
+header {
+    padding-left: 20px;
+    background-color: red;
+    color: white;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+header ul li {
+    display: inline-block;
+    padding: 0 25px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+}
