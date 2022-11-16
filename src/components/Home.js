@@ -7,9 +7,6 @@ const Home = () => {
 
   const popularVideos = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=20&regionCode=US&key=${process.env.REACT_APP_API_KEY}`;
 
-  // const popularVideos =
-  //   "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=US&key=AIzaSyAas_iefBoPEfL087YtdFU3jDUB3BtFI6U";
-
   useEffect(() => {
     fetch(`${popularVideos}`)
       .then((res) => res.json())
