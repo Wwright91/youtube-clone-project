@@ -1,8 +1,9 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import About from "./components/About";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Video from "./components/Video";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/videos/:id" element={<Video />} />
         </Routes>
       </Router>
     </div>
