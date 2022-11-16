@@ -1,0 +1,13 @@
+.home {
+  width: 80%;
+  margin: 0 auto;
+  padding: 50px 0px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  row-gap: 30px;
+}
+
+.card {
+  width: min-content;
+}

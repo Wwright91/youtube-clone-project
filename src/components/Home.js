@@ -18,7 +18,7 @@ const Home = () => {
     <div className="home">
       {apidata.map(({ id, snippet }) => {
         return (
-          <div className="card">
+          <div className="card" key={id}>
             <img src={snippet.thumbnails.high.url} />
             <h4>{snippet.title}</h4>
           </div>
