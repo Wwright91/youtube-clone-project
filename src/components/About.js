@@ -42,13 +42,9 @@ const About = () => {
               </a>
             </div>
           </div>
-
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima
-            asperiores ipsam hic, accusantium enim eligendi dolores, cupiditate
-            tenetur molestiae harum quasi soluta, ab atque voluptas aliquam sint
-            quaerat adipisci itaque?
-          </p>
+          <p>I am a 9.2 Pursuit Fellow.</p>
+          <p>I take code one console.log at a time.</p>
+          <p>Aside from coding, I enjoy video games.</p>
         </div>
         <div className="dev">
           <div className="name-github">

@@ -5,7 +5,9 @@ const NavBar = () => {
   return (
     <header>
       <article>
-        <h1>YouTube</h1>
+        <Link to="/">
+           <h1>YouTube</h1>
+        </Link>
       </article>
       <nav>
         <ul>
