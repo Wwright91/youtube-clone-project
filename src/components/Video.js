@@ -9,7 +9,7 @@ const opts = {
   playerVars: {
     // https://developers.google.com/youtube/player_parameters
     autoplay: 0,
-    enablejsapi: 1,
+    // enablejsapi: 1,
   },
 };
 
@@ -23,7 +23,7 @@ export default function Video() {
   console.log(id);
   return (
     <div>
-      <YouTube videoId={id} opts={opts} onReady={onReady} />
+      <YouTube videoId={id} opts={opts} />
     </div>
   );
 }
