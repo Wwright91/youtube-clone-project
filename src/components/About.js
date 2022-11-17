@@ -27,9 +27,9 @@ const About = () => {
       <div className="developers">
         <div className="dev">
           <div className="name-github">
-            <h3>Wisdom Wright</h3>
+            <h3 className="dev-name">Wisdom Wright</h3>
             <div className="github">
-              <a href="https://github.com/Wwright91">
+              <a href="https://github.com/Wwright91" target="_blank">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="50"
@@ -54,7 +54,7 @@ const About = () => {
           <div className="name-github">
             <h3>Bo Latt</h3>
             <div className="github">
-              <a href="https://github.com/bolattt">
+              <a href="https://github.com/bolattt" target="_blank">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="50"
