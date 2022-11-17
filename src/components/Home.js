@@ -31,9 +31,8 @@ const Home = () => {
 
               <h4>{snippet.title}</h4>
               <div className="details">
-                <p>{snippet.channelTitle}</p>
                 <p>
-                  {/* <span> {formatDuration(contentDetails.duration)} </span> */}
+                  <span>{snippet.channelTitle}</span>
                   <span> {formatViewsCount(statistics.viewCount)} Views</span>
                 </p>
               </div>

@@ -21,17 +21,18 @@
   margin-bottom: 5px;
 }
 
-.details p {
-  margin-bottom: 0px;
-}
 .home .details {
   font-size: 0.7rem;
   color: #777;
 }
 
+.details p {
+  margin-bottom: 0px;
+}
+
 .details span {
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 .img-wrapper {
