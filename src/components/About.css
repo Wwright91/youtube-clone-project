@@ -1,0 +1,91 @@
+.about {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  letter-spacing: 1px;
+}
+
+.about h1 {
+  margin-bottom: 40px;
+}
+.buttons-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.about button {
+  width: 100%;
+  cursor: pointer;
+  margin-right: 10px;
+  padding: 15px 50px;
+  background-color: #ddd;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+  color: #555;
+  border-radius: 10px;
+  font-weight: 500;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
+    rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
+}
+.about button:hover {
+  transform: translateY(-3px);
+  box-shadow: rgba(0, 0, 0, 0.2) 0 10px 5px -1px,
+    rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
+}
+
+.about .name-github {
+  display: flex;
+  justify-content: space-between;
+}
+
+hr {
+  height: 1px;
+  background-color: rgb(171, 14, 14);
+  margin: 30px 0px;
+}
+
+.project-intro p {
+  font-size: 1.5rem;
+}
+
+.developers {
+  display: flex;
+  gap: 30px;
+}
+.dev {
+  padding: 10px 20px;
+  background-color: #444;
+  color: white;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.dev p {
+  font-size: 1.2rem;
+}
+
+.dev svg {
+  font-size: 30px;
+}
+
+.dev a {
+  color: rgb(209, 57, 57);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.dev h3 {
+  font-size: 1.8rem;
+}
+
+.dev .github {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.github:hover {
+  transform: rotate(9deg) scale(1.2);
+}
