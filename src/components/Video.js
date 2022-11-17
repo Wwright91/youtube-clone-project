@@ -19,7 +19,8 @@ function onReady(event) {
 }
 
 export default function Video() {
-  const { id } = useParams;
+  const { id } = useParams();
+  console.log(id);
   return (
     <div>
       <YouTube videoId={id} opts={opts} onReady={onReady} />

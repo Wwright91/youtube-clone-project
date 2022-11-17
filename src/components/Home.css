@@ -11,3 +11,7 @@
 .card {
   width: min-content;
 }
+
+a {
+  color: black;
+}
