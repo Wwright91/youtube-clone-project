@@ -18,7 +18,7 @@ const Home = () => {
 
   return (
     <div className="home">
-      {apidata.map(({ id, snippet, statistics, contentDetails }) => {
+      {apidata.map(({ id, snippet }) => {
         return (
           <Link key={id} to={`videos/${id}`}>
             <div className="card">
