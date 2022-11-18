@@ -6,23 +6,30 @@ header {
   display: flex;
   align-items: center;
   padding: 15px 30px;
+  box-sizing: border-box;
 }
 
 header article {
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
+  transition: 0.3s ease;
 }
 
 header ul li {
   display: inline-block;
   padding: 0 25px;
+  transition: 0.3s ease;
 }
 
-a {
+header a {
   color: #555;
   text-decoration: none;
   font-weight: bold;
   font-size: 1.3rem;
+}
+header li:hover,
+header article:hover {
+  transform: scale(1.25);
 }
 
 header img {
