@@ -1,19 +1,38 @@
 header {
-    padding-left: 20px;
-    background-color: red;
-    color: white;
-    text-align: left;
-    display: flex;
-    align-items: center;
+  padding-left: 20px;
+  background-color: white;
+  color: rgb(0, 0, 0);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  box-sizing: border-box;
+}
+
+header article {
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  transition: 0.3s ease;
 }
 
 header ul li {
-    display: inline-block;
-    padding: 0 25px;
+  display: inline-block;
+  padding: 0 25px;
+  transition: 0.3s ease;
 }
 
-a {
-    color: white;
-    text-decoration: none;
-    font-weight: bolder;
+header a {
+  color: #555;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.3rem;
+  filter: drop-shadow(5px 5px 3px #888);
+}
+header li:hover,
+header article:hover {
+  transform: scale(1.25);
+}
+
+header img {
+  height: 25px;
 }

@@ -48,19 +48,16 @@ const Home = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Search Videos:
-          <input
-            type="text"
-            value={inputValue}
-            onChange={(e) => {
-              setInputValue(e.target.value);
-            }}
-            required
-          />
-        </label>
-        <button>Submit</button>
+      <form onSubmit={handleSubmit} className="search-form">
+        <input
+          type="text"
+          value={inputValue}
+          onChange={(e) => {
+            setInputValue(e.target.value);
+          }}
+          required
+        />
+        <button>Search</button>
       </form>
 
       <div className="home">
