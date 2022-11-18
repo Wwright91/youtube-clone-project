@@ -71,17 +71,25 @@
   border: 1px solid #333;
 }
 
+.search-form input:hover {
+  transform: scale(1.009);
+}
+
 .search-form button {
   padding: 0px 35px;
   background-color: #dc3545;
   color: white;
   font-weight: bold;
   font-size: 1.05rem;
-  margin-left: 2px;
+  margin-left: 5px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   border-radius: 20px;
+}
+
+.search-form button:hover {
+  transform: scale(1.03);
 }
 
 .search-form input {
