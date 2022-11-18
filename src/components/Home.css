@@ -69,6 +69,7 @@
   height: 40px;
   border-radius: 20px;
   border: 1px solid #333;
+  transition: 0.2s ease-in-out;
 }
 
 .search-form input:hover {

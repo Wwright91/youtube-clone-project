@@ -26,6 +26,7 @@ header a {
   text-decoration: none;
   font-weight: bold;
   font-size: 1.3rem;
+  filter: drop-shadow(5px 5px 3px #888);
 }
 header li:hover,
 header article:hover {
