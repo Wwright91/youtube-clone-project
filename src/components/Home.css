@@ -50,3 +50,36 @@
   right: 15px;
   color: #ccc;
 }
+
+.search-form {
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.search-form input {
+  width: 78%;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid #333;
+}
+
+.search-form button {
+  padding: 0px 35px;
+  background-color: #dc3545;
+  color: white;
+  font-weight: bold;
+  font-size: 1.05rem;
+  margin-left: 2px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.search-form input {
+  padding-left: 20px;
+  font-size: 1.2rem;
+}

@@ -6,9 +6,13 @@ const NavBar = () => {
     <header>
       <article>
         <Link to="/">
-           <h1>YouTube</h1>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/1024px-YouTube_Logo_2017.svg.png?20220605194644"
+            alt=""
+          />
         </Link>
       </article>
+
       <nav>
         <ul>
           <li>

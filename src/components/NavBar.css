@@ -1,19 +1,30 @@
 header {
-    padding-left: 20px;
-    background-color: red;
-    color: white;
-    text-align: left;
-    display: flex;
-    align-items: center;
+  padding-left: 20px;
+  background-color: white;
+  color: rgb(0, 0, 0);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+header article {
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
 }
 
 header ul li {
-    display: inline-block;
-    padding: 0 25px;
+  display: inline-block;
+  padding: 0 25px;
 }
 
 a {
-    color: white;
-    text-decoration: none;
-    font-weight: bolder;
+  color: #555;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+header img {
+  height: 25px;
 }
