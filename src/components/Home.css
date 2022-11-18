@@ -10,6 +10,11 @@
 
 .card {
   width: min-content;
+  transition: 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .card img {
