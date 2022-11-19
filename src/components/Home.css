@@ -52,8 +52,8 @@
 
 #duration {
   position: absolute;
-  bottom: 15px;
-  right: 15px;
+  bottom: 10px;
+  right: 8px;
   color: #ccc;
   background-color: #333;
   padding: 3px 10px;
