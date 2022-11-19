@@ -9,6 +9,7 @@
   margin-bottom: 40px;
 }
 .buttons-container {
+  max-width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
@@ -52,13 +53,15 @@ hr {
 .developers {
   display: flex;
   gap: 30px;
+  padding: 2px;
+  width: 100%;
 }
 .dev {
   padding: 10px 20px;
   background-color: #444;
   color: white;
   border-radius: 10px;
-  width: 100%;
+  max-width: 100%;
 }
 
 .dev p {
@@ -88,4 +91,19 @@ hr {
 
 .github:hover {
   transform: rotate(9deg) scale(1.2);
+}
+
+@media screen and (max-width: 550px) {
+  .developers {
+    flex-direction: column;
+  }
+
+  .about {
+    padding: 30px;
+  }
+
+  .about button {
+    font-size: 1rem;
+    padding: 15px 20px;
+  }
 }
