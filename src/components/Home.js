@@ -67,13 +67,13 @@ const Home = () => {
                 <Link key={i} to={`videos/${id.videoId}`}>
                   <div className="card">
                     <div className="img-wrapper">
-                      <img src={snippet.thumbnails.high.url} />
+                      <img src={snippet.thumbnails.medium.url} />
                       <span id="duration">
                         {/* {formatDuration(contentDetails.duration)} */}
                       </span>
                     </div>
 
-                    <h4>{snippet.title}</h4>
+                    <h4 className="video-title">{snippet.title}</h4>
                     <div className="details">
                       <p>
                         <span>{snippet.channelTitle}</span>
@@ -92,13 +92,13 @@ const Home = () => {
                 <Link key={i} to={`videos/${id}`}>
                   <div className="card">
                     <div className="img-wrapper">
-                      <img src={snippet.thumbnails.high.url} />
+                      <img src={snippet.thumbnails.medium.url} />
                       <span id="duration">
                         {formatDuration(contentDetails.duration)}
                       </span>
                     </div>
 
-                    <h4>{snippet.title}</h4>
+                    <h4 className="video-title">{snippet.title}</h4>
                     <div className="details">
                       <p>
                         <span>{snippet.channelTitle}</span>

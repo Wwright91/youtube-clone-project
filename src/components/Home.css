@@ -3,7 +3,7 @@
   margin: 0 auto;
   padding: 50px 0px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
   row-gap: 40px;
 }
@@ -18,17 +18,18 @@
 }
 
 .card img {
-  border-radius: 30px;
+  border-radius: 10px;
   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.card .video-title {
+  margin-bottom: 5px;
+  font-size: 0.9rem;
 }
 
 .home a {
   color: black;
-  font-size: 1.2rem;
-}
-
-.home h4 {
-  margin-bottom: 5px;
+  text-decoration: none;
 }
 
 .home .details {
@@ -54,6 +55,10 @@
   bottom: 15px;
   right: 15px;
   color: #ccc;
+  background-color: #333;
+  padding: 3px 10px;
+  border-radius: 15px;
+  font-weight: bold;
 }
 
 .search-form {
