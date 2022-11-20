@@ -5,16 +5,12 @@ import "./Home.css";
 export default function CardSkeleton({ cards }) {
   return (
     <>
-      {Array(8)
+      {Array(12)
         .fill(0)
         .map((x) => (
           <div className="card">
             <div className="img-wrapper">
-              <Skeleton
-                width={320}
-                height={180}
-                style={{ borderRadius: "10px" }}
-              />
+              <Skeleton width={320} height={180} borderRadius="10px" />
             </div>
 
             <h4 className="video-title">{<Skeleton />}</h4>

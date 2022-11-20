@@ -4,7 +4,7 @@ import "./Home.css";
 import { formatDuration, formatViewsCount } from "./HelperFunctions";
 import CardSkeleton from "./CardSkeleton";
 
-const popularVideos = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=20&regionCode=US&key=${process.env.REACT_APP_API_KEY}`;
+const popularVideos = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=21&regionCode=US&key=${process.env.REACT_APP_API_KEY}`;
 
 const Home = () => {
   const [apidata, setApidata] = useState([]);
