@@ -17,6 +17,7 @@ header article {
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
   transition: 0.3s ease;
+  padding-left: 20px;
 }
 
 header ul {
@@ -39,7 +40,7 @@ header a {
   filter: drop-shadow(5px 5px 3px #888);
 }
 header li:hover,
-header article:hover {
+.youtube-logo:hover {
   transform: scale(1.25);
 }
 
@@ -54,7 +55,7 @@ header img {
 
   header ul li {
     margin-right: 0px;
-    padding: 0;
+    padding-right: 15px;
   }
   header li a {
     font-size: 1.1rem;
