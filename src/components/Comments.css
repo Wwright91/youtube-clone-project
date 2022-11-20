@@ -1,0 +1,52 @@
+ul {
+  list-style: none;
+}
+
+.avatar {
+  height: 30px;
+}
+
+.comment-form input {
+  width: 50%;
+  height: 30px;
+  border-radius: 10px;
+}
+
+#comment,
+#commenter {
+  background-color: black;
+  color: white;
+}
+
+::placeholder {
+  color: white;
+  text-align: center;
+}
+
+.comment-button {
+  border-radius: 50px;
+  background-color: skyblue;
+  cursor: pointer;
+}
+
+.comment-button:hover {
+  background-color: lightblue;
+}
+
+.reply,
+#up,
+#down {
+  border: none;
+  cursor: pointer;
+  background-color: #ffff;
+}
+
+#comment-section {
+  text-align: left;
+  width: 50%;
+  margin-left: 260px;
+}
+
+.comment {
+  padding-left: 30px;
+}

@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import YouTube from "react-youtube";
+import Comments from "./Comments";
 
 import "./Video.css";
 
@@ -22,8 +23,9 @@ export default function Video() {
   const { id } = useParams();
   console.log(id);
   return (
-    <div>
+    <div className="videopage">
       <YouTube videoId={id} opts={opts} />
+      <Comments id={id} />
     </div>
   );
 }
