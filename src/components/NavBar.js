@@ -4,7 +4,6 @@ import Searchbar from "./Searchbar";
 
 const NavBar = () => {
   return (
-    <div>
     <header>
       <article>
         <Link to="/">
@@ -25,9 +24,8 @@ const NavBar = () => {
           </li>
         </ul>
       </nav>
-    </header>
     <Searchbar/>
-   </div>
+    </header>
   );
 };
 
