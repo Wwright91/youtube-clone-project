@@ -3,7 +3,8 @@ header {
   background-color: white;
   color: rgb(0, 0, 0);
   text-align: left;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
   align-items: center;
   padding: 15px 30px;
   box-sizing: border-box;
@@ -16,11 +17,18 @@ header article {
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
   transition: 0.3s ease;
+  padding-left: 20px;
+}
+
+header ul {
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
 }
 
 header ul li {
   display: inline-block;
-  padding: 0 25px;
+  /* padding: 0 25px; */
   transition: 0.3s ease;
 }
 
@@ -32,10 +40,33 @@ header a {
   filter: drop-shadow(5px 5px 3px #888);
 }
 header li:hover,
-header article:hover {
+.youtube-logo:hover {
   transform: scale(1.25);
 }
 
 header img {
   height: 25px;
+}
+
+@media screen and (max-width: 965px) {
+  .search-form {
+    width: 100%;
+  }
+
+  header ul li {
+    margin-right: 0px;
+    padding-right: 15px;
+  }
+  header li a {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .youtube-logo {
+    display: none;
+  }
+  header {
+    grid-template-columns: 5fr 1fr;
+    padding: 15px 0px;
+  }
 }

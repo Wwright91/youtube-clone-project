@@ -5,7 +5,7 @@ import Searchbar from "./Searchbar";
 const NavBar = () => {
   return (
     <header>
-      <article>
+      <article class="youtube-logo">
         <Link to="/">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/1024px-YouTube_Logo_2017.svg.png?20220605194644"
@@ -13,6 +13,7 @@ const NavBar = () => {
           />
         </Link>
       </article>
+      <Searchbar />
 
       <nav>
         <ul>
@@ -24,7 +25,6 @@ const NavBar = () => {
           </li>
         </ul>
       </nav>
-    <Searchbar/>
     </header>
   );
 };

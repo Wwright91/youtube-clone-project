@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./SearchBar.css";
 
 const Searchbar = () => {
   const [inputValue, setInputValue] = useState("");
@@ -22,8 +23,8 @@ const Searchbar = () => {
             setInputValue(e.target.value);
           }}
           required
-        />
-        <button>Search</button>
+        ></input>
+        <button id="magnifying-glass">&#x1F50D;</button>
       </form>
     </div>
   );
