@@ -1,122 +1,26 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import "./Home.css";
-import { formatDuration, formatViewsCount } from "./HelperFunctions";
-import CardSkeleton from "./CardSkeleton";
+import VideoList from "./VideoList";
 
-const popularVideos = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=21&regionCode=US&key=${process.env.REACT_APP_API_KEY}`;
+const popularVideosUrl = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=21&regionCode=US&key=${process.env.REACT_APP_API_KEY}`;
 
 const Home = () => {
-  const [apidata, setApidata] = useState([]);
-  const [inputValue, setInputValue] = useState("");
-  const [searchedData, setSearchedData] = useState([]);
+  const [popularVideos, setPopularVideos] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [submit, setSubmit] = useState(false);
 
   useEffect(() => {
-    fetch(`${popularVideos}`)
+    fetch(`${popularVideosUrl}`)
       .then((res) => res.json())
       .then((data) => {
-        setApidata(data.items);
+        setPopularVideos(data.items);
         setLoading(false);
         console.log(data.items);
       });
   }, []);
 
-  function handleSubmit(e) {
-    e.preventDefault();
-
-    if (!inputValue) {
-      alert("Please input a value");
-    } else {
-      fetch(
-        `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${inputValue}&key=${process.env.REACT_APP_API_KEY}`
-      )
-        .then((res) => {
-          console.log(res);
-          return res.json();
-        })
-        .then((data) => {
-          console.log(data.items);
-          data = data.items.filter(
-            (item) => !item.snippet.thumbnails.high.url.endsWith("-mo")
-          );
-
-          setSearchedData(data);
-        });
-      setInputValue("");
-      setSubmit(true);
-    }
-  }
-
   return (
     <div>
-      <form onSubmit={handleSubmit} className="search-form">
-        <input
-          type="text"
-          value={inputValue}
-          onChange={(e) => {
-            setInputValue(e.target.value);
-          }}
-          required
-        />
-        <button>Search</button>
-      </form>
-
-      <div className="home">
-        {loading && <CardSkeleton />}
-        {submit
-          ? searchedData.map(({ id, snippet }, i) => {
-              return (
-                <Link key={i} to={`videos/${id.videoId}`}>
-                  <div className="card">
-                    <div className="img-wrapper">
-                      <img src={snippet.thumbnails.medium.url} />
-                      <span id="duration">
-                        {/* {formatDuration(contentDetails.duration)} */}
-                      </span>
-                    </div>
-
-                    <h4 className="video-title">{snippet.title}</h4>
-                    <div className="details">
-                      <p>
-                        <span>{snippet.channelTitle}</span>
-                        <span>
-                          {" "}
-                          {/* {formatViewsCount(statistics.viewCount)} Views */}
-                        </span>
-                      </p>
-                    </div>
-                  </div>
-                </Link>
-              );
-            })
-          : apidata.map(({ id, snippet, contentDetails, statistics }, i) => {
-              return (
-                <Link key={i} to={`videos/${id}`}>
-                  <div className="card">
-                    <div className="img-wrapper">
-                      <img src={snippet.thumbnails.medium.url} />
-                      <span id="duration">
-                        {formatDuration(contentDetails.duration)}
-                      </span>
-                    </div>
-
-                    <h4 className="video-title">{snippet.title}</h4>
-                    <div className="details">
-                      <p>
-                        <span>{snippet.channelTitle}</span>
-                        <span>
-                          {" "}
-                          {formatViewsCount(statistics.viewCount)} Views
-                        </span>
-                      </p>
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
-      </div>
+      <VideoList videos={popularVideos} kind="popular" loading={ loading} />
     </div>
   );
 };

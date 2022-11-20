@@ -1,8 +1,10 @@
 import "./NavBar.css";
 import { Link } from "react-router-dom";
+import Searchbar from "./Searchbar";
 
 const NavBar = () => {
   return (
+    <div>
     <header>
       <article>
         <Link to="/">
@@ -24,6 +26,8 @@ const NavBar = () => {
         </ul>
       </nav>
     </header>
+    <Searchbar/>
+   </div>
   );
 };
 
