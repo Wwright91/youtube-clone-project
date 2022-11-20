@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import YouTube from "react-youtube";
 import Comments from "./Comments";
 import { formatViewsCount } from "./HelperFunctions";
+import ReadMoreAndLess from "react-read-more-less"
 
 import "./Video.css";
 
@@ -40,12 +41,17 @@ export default function Video() {
   return (
     <div className="videopage">
       <YouTube videoId={id} opts={opts} />
-      {videoDetails.map(({ snippet, statistics }) => {
-        return (<div>
+      {videoDetails.map(({ snippet, statistics }, i) => {
+        return (<div key={i}>
           <h2>{snippet.title}</h2>
-          <p>{snippet.description}</p>
+          <ReadMoreAndLess
+             className="read-more-content"
+            readMoreText="Show more"
+            readLessText="Show less" >
+          {snippet.description}</ReadMoreAndLess>
           <p>Uploaded on {snippet.publishedAt}</p>
           <p>{formatViewsCount(statistics.viewCount)} views</p>
+          <p>{formatViewsCount(statistics.commentCount)} comments</p>
           </div>)
       })}
       <Comments id={id} />
