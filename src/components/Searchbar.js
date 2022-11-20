@@ -24,7 +24,7 @@ const Searchbar = () => {
           }}
           required
         ></input>
-        <button id="magnifying-glass">Search</button>
+        <button id="magnifying-glass">&#x1F50D;</button>
       </form>
     </div>
   );
