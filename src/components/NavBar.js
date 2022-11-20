@@ -13,6 +13,7 @@ const NavBar = () => {
           />
         </Link>
       </article>
+      <Searchbar />
 
       <nav>
         <ul>
@@ -24,7 +25,6 @@ const NavBar = () => {
           </li>
         </ul>
       </nav>
-    <Searchbar/>
     </header>
   );
 };
