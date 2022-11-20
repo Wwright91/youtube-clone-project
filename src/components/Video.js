@@ -1,6 +1,9 @@
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import YouTube from "react-youtube";
 import Comments from "./Comments";
+import { formatViewsCount } from "./HelperFunctions";
+import ReadMoreAndLess from "react-read-more-less"
 
 import "./Video.css";
 
@@ -22,9 +25,35 @@ function onReady(event) {
 export default function Video() {
   const { id } = useParams();
   console.log(id);
+  const [videoDetails, setVideoDetails] = useState([])
+
+  useEffect(() => {
+  fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${id}&key=${process.env.REACT_APP_API_KEY}`)
+  .then((res) => res.json())
+    .then((data) => {
+      // console.log(data.items)
+    setVideoDetails(data.items)
+  });
+  }, []);
+  
+  console.log(videoDetails)
+
   return (
     <div className="videopage">
       <YouTube videoId={id} opts={opts} />
+      {videoDetails.map(({ snippet, statistics }, i) => {
+        return (<div key={i}>
+          <h2>{snippet.title}</h2>
+          <ReadMoreAndLess
+             className="read-more-content"
+            readMoreText="Show more"
+            readLessText="Show less" >
+          {snippet.description}</ReadMoreAndLess>
+          <p>Uploaded on {snippet.publishedAt}</p>
+          <p>{formatViewsCount(statistics.viewCount)} views</p>
+          <p>{formatViewsCount(statistics.commentCount)} comments</p>
+          </div>)
+      })}
       <Comments id={id} />
     </div>
   );
