@@ -7,8 +7,9 @@ const Comments = ({ id }) => {
   const [addComment, setAddComment] = useState({
     commenter: "",
     comment: "",
+    image: "",
   });
-  const [comments, setComments] = useState(
+  const [localstoragedetails, setlocalstoragedetails] = useState(
     JSON.parse(window.localStorage.getItem(id)) || []
   );
   const generator = new AvatarGenerator();
@@ -21,13 +22,16 @@ const Comments = ({ id }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const newComments = [...comments, addComment];
+    const userimage = generator.generateRandomAvatar()
+    console.log(userimage)
+    const newComments = [...localstoragedetails, {...addComment, image: userimage}];
     // console.log(newComments);
     window.localStorage.setItem(id, JSON.stringify(newComments));
     // console.log(window.localStorage);
-    setComments(newComments);
+    setlocalstoragedetails(newComments);
     setAddComment({ commenter: "", comment: "" });
   }
+  // console.log(window.localStorage);
 
   // localStorage.clear()
   return (
@@ -60,13 +64,13 @@ const Comments = ({ id }) => {
         <button className="comment-button">Comment</button>
       </form>
       <ul id="comment-section">
-        {comments.map((comment, index) => {
+        {localstoragedetails.map((comment, index) => {
           return (
             <li key={index} className="user-comment">
               <h3>
                 <img
                   className="avatar"
-                  src={generator.generateRandomAvatar()}
+                  src={comment.image}
                 />{" "}
                 {comment.commenter}
               </h3>
