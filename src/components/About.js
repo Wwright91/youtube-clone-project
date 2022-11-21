@@ -14,11 +14,9 @@ const About = () => {
           <a
             href="https://github.com/Wwright91/youtube-clone-project"
             target="_blank"
+            rel="noreferrer"
           >
             <button>Source Code</button>
-          </a>
-          <a href="" target="_blank">
-            <button>Live Demo</button>
           </a>
         </div>
       </div>
@@ -29,7 +27,11 @@ const About = () => {
           <div className="name-github">
             <h3 className="dev-name">Wisdom Wright</h3>
             <div className="github">
-              <a href="https://github.com/Wwright91" target="_blank">
+              <a
+                href="https://github.com/Wwright91"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="50"
@@ -50,7 +52,11 @@ const About = () => {
           <div className="name-github">
             <h3>Bo Latt</h3>
             <div className="github">
-              <a href="https://github.com/bolattt" target="_blank">
+              <a
+                href="https://github.com/bolattt"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="50"
