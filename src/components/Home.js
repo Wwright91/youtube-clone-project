@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Home.css";
 import VideoList from "./VideoList";
+import Modal from "./ErrorModal";
 
 const popularVideosUrl = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=21&regionCode=US&key=${process.env.REACT_APP_API_KEY}`;
 
@@ -30,7 +31,9 @@ const Home = () => {
 
   return (
     <div>
-      <VideoList videos={popularVideos} kind="popular" loading={loading} loadingError={ loadingError} />
+      {loadingError ? <Modal loadingError={loadingError} setLoadingError={setLoadingError}/> :
+        <VideoList videos={popularVideos} kind="popular" loading={loading} loadingError={loadingError} />
+      }
     </div>
   );
 };
