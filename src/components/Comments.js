@@ -20,6 +20,14 @@ const Comments = ({ id }) => {
     setAddComment(newObj);
   }
 
+  function handleDeleteComment(e, index) {
+    e.target.parentNode.remove()
+    localstoragedetails.splice(index, 1)
+    localStorage.setItem(id, JSON.stringify(localstoragedetails))
+  }
+
+  
+
   function handleSubmit(e) {
     e.preventDefault();
     const userimage = generator.generateRandomAvatar()
@@ -27,7 +35,6 @@ const Comments = ({ id }) => {
     const newComments = [...localstoragedetails, {...addComment, image: userimage}];
     // console.log(newComments);
     window.localStorage.setItem(id, JSON.stringify(newComments));
-    // console.log(window.localStorage);
     setlocalstoragedetails(newComments);
     setAddComment({ commenter: "", comment: "" });
   }
@@ -75,7 +82,9 @@ const Comments = ({ id }) => {
                 {comment.commenter}
               </h3>
               <p className="comment">{comment.comment}</p>
-              <LikeDislike /> <button className="reply">Reply</button>
+              <LikeDislike />
+              <button className="reply">Reply</button>
+              <button onClick={(e) => handleDeleteComment(e, index)} className="delete-button">Delete</button>
             </li>
           );
         })}

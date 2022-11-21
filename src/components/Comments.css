@@ -50,3 +50,7 @@ ul {
 .comment {
   padding-left: 30px;
 }
+
+.delete-button {
+  cursor: pointer;
+}
