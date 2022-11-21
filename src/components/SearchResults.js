@@ -1,17 +1,22 @@
 import { useEffect, useState } from "react";
 import VideoList from "./VideoList";
 import { useParams } from "react-router-dom";
+import Modal from "./ErrorModal";
 
 const SearchResults = () => {
   const [searchedData, setSearchedData] = useState([]);
   const { input } = useParams();
   // console.log(input)
+
+  const [loadingError, setLoadingError] = useState(false);
+
   useEffect(() => {
     fetch(
       `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${input}&key=${process.env.REACT_APP_API_KEY}`
     )
       .then((res) => {
         console.log(res);
+        if (!res.ok) throw new Error("Error in Search Results Comp");
         return res.json();
       })
       .then((data) => {
@@ -21,12 +26,25 @@ const SearchResults = () => {
         );
 
         setSearchedData(data);
+        setLoadingError(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        setLoadingError(true);
       });
   }, []);
 
   return (
     <div>
-      <VideoList videos={searchedData} kind="search" />
+      {loadingError ? (
+        <Modal loadingError={loadingError} setLoadingError={setLoadingError} />
+      ) : (
+        <VideoList
+          videos={searchedData}
+          kind="search"
+          loadingError={loadingError}
+        />
+      )}
     </div>
   );
 };
