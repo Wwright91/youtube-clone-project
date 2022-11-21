@@ -22,9 +22,12 @@ const Comments = ({ id }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const userimage = generator.generateRandomAvatar()
-    console.log(userimage)
-    const newComments = [...localstoragedetails, {...addComment, image: userimage}];
+    const userimage = generator.generateRandomAvatar();
+    console.log(userimage);
+    const newComments = [
+      ...localstoragedetails,
+      { ...addComment, image: userimage },
+    ];
     // console.log(newComments);
     window.localStorage.setItem(id, JSON.stringify(newComments));
     // console.log(window.localStorage);
@@ -68,10 +71,7 @@ const Comments = ({ id }) => {
           return (
             <li key={index} className="user-comment">
               <h3>
-                <img
-                  className="avatar"
-                  src={comment.image}
-                />{" "}
+                <img className="avatar" src={comment.image} alt="avatar" />{" "}
                 {comment.commenter}
               </h3>
               <p className="comment">{comment.comment}</p>
