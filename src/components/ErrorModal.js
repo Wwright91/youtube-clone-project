@@ -11,7 +11,7 @@ const Modal = ({loadingError, setLoadingError}) => {
               setLoadingError(false);
             }}
           >
-            <img className="red-x" src="https://www.kindpng.com/picc/m/503-5036239_red-x-mark-icon-good-mark-hd-png.png" alt="red-x"/>
+            ❌
           </button>
           <h3>Oops!</h3>
           <h4>Something went wrong... Please try again</h4>
