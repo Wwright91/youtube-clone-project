@@ -30,7 +30,7 @@ export default function Video() {
   const [loadingError, setLoadingError] = useState(false);
 
   useEffect(() => {
-    fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${id}&key=${process.env.REACT_APP_API_KEY}akjnanok`)
+    fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${id}&key=${process.env.REACT_APP_API_KEY}`)
       .then((res) => {
         if(!res.ok)
           throw new Error("I am an error"); 

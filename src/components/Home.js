@@ -11,7 +11,11 @@ const Home = () => {
 
   useEffect(() => {
     fetch(`${popularVideosUrl}`)
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok)
+          throw new Error("Throwing Throwing")
+       return res.json()
+      })
       .then((data) => {
         setPopularVideos(data.items);
         setLoading(false);
