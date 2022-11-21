@@ -1,17 +1,14 @@
-// import CardSkeleton from "./CardSkeleton";
+import CardSkeleton from "./CardSkeleton";
 import { formatDuration, formatViewsCount } from "./HelperFunctions";
 import { Link } from "react-router-dom";
 import Modal from "./ErrorModal";
 import "./Home.css";
 import { useState } from "react";
 
-const VideoList = ({ videos, kind, loading, loadingError}) => {
-
-
-
+const VideoList = ({ videos, kind, loading, loadingError }) => {
   return (
     <div className="home">
-      {/* {loading && <CardSkeleton />} */}
+      {loading && <CardSkeleton />}
       {/* {loadingError && <Modal/>} */}
       {kind !== "popular"
         ? videos.map(({ id, snippet }, i) => {
