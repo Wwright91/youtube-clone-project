@@ -36,7 +36,7 @@ const SearchResults = () => {
         setLoading(false);
         setLoadingError(true);
       });
-  }, []);
+  }, [input]);
 
   return (
     <div>
