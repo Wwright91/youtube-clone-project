@@ -5,12 +5,14 @@ import Modal from "./ErrorModal";
 
 const SearchResults = () => {
   const [searchedData, setSearchedData] = useState([]);
+  const [loading, setLoading] = useState(false);
   const { input } = useParams();
   // console.log(input)
 
   const [loadingError, setLoadingError] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     fetch(
       `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${input}&key=${process.env.REACT_APP_API_KEY}`
     )
@@ -26,10 +28,12 @@ const SearchResults = () => {
         );
 
         setSearchedData(data);
+        setLoading(false);
         setLoadingError(false);
       })
       .catch((error) => {
         console.error(error);
+        setLoading(false);
         setLoadingError(true);
       });
   }, []);
@@ -42,6 +46,7 @@ const SearchResults = () => {
         <VideoList
           videos={searchedData}
           kind="search"
+          loading={loading}
           loadingError={loadingError}
         />
       )}
