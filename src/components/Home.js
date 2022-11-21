@@ -7,6 +7,7 @@ const popularVideosUrl = `https://youtube.googleapis.com/youtube/v3/videos?part=
 const Home = () => {
   const [popularVideos, setPopularVideos] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [loadingError, setLoadingError] = useState(false);
 
   useEffect(() => {
     fetch(`${popularVideosUrl}`)
@@ -14,13 +15,18 @@ const Home = () => {
       .then((data) => {
         setPopularVideos(data.items);
         setLoading(false);
+        setLoadingError(false);
         console.log(data.items);
+      })
+      .catch((error) => {
+        console.error(error);
+        setLoadingError(true);
       });
   }, []);
 
   return (
     <div>
-      <VideoList videos={popularVideos} kind="popular" loading={ loading} />
+      <VideoList videos={popularVideos} kind="popular" loading={loading} loadingError={ loadingError} />
     </div>
   );
 };
