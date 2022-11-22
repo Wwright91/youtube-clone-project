@@ -9,10 +9,8 @@
   margin-bottom: 40px;
 }
 .buttons-container {
-  max-width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  max-width: 50%;
+  margin: 50px auto;
 }
 
 .about button {
