@@ -14,9 +14,6 @@ const VideoList = ({ videos, kind, loading, loadingError }) => {
                 <div className="card">
                   <div className="img-wrapper">
                     <img src={snippet.thumbnails.medium.url} alt="thumbnail" />
-                    <span id="duration">
-                      {/* {formatDuration(contentDetails.duration)} */}
-                    </span>
                   </div>
 
                   <h4 className="video-title">{snippet.title}</h4>
