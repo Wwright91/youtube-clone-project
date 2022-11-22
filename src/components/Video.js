@@ -56,7 +56,7 @@ export default function Video() {
         console.error(error);
         setLoadingError(true);
       });
-  }, [id]);
+  }, [id, channelId]);
   console.log(channelDetails);
   return (
     <div className="videopage">
