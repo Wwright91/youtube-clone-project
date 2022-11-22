@@ -20,7 +20,6 @@
 
 .search-form button {
   padding: 0px 20px;
-  background-color: #dc3545;
   color: white;
   font-weight: bold;
   font-size: 1.05rem;
@@ -29,6 +28,9 @@
   border-radius: 5px;
   cursor: pointer;
   border-radius: 20px;
+  position: relative;
+  background-color: transparent;
+  right: 65px;
 }
 
 .search-form button:hover {
