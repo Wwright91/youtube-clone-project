@@ -10,7 +10,10 @@ const VideoList = ({ videos, kind, loading, loadingError }) => {
       {kind !== "popular"
         ? videos.map(({ id, snippet }, i) => {
             return (
-              <Link key={i} to={`/videos/${id.videoId}`}>
+              <Link
+                key={i}
+                to={`/videos/${id.videoId}?channelId=${snippet.channelId}`}
+              >
                 <div className="card">
                   <div className="img-wrapper">
                     <img src={snippet.thumbnails.medium.url} alt="thumbnail" />
@@ -28,7 +31,7 @@ const VideoList = ({ videos, kind, loading, loadingError }) => {
           })
         : videos.map(({ id, snippet, contentDetails, statistics }, i) => {
             return (
-              <Link key={i} to={`videos/${id}`}>
+              <Link key={i} to={`videos/${id}?channelId=${snippet.channelId}`}>
                 <div className="card">
                   <div className="img-wrapper">
                     <img src={snippet.thumbnails.medium.url} alt="thumbnail" />
