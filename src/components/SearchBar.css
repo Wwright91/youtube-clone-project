@@ -29,10 +29,13 @@
   border-radius: 5px;
   cursor: pointer;
   border-radius: 20px;
+  position: relative;
+  right: 65px;
+  background-color: transparent;
 }
 
 .search-form button:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
 .search-form input {
