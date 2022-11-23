@@ -3,3 +3,36 @@
   margin: 0 auto;
   width: 80%;
 }
+
+.channel-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.channel-details {
+  display: grid;
+  text-align: left;
+  grid-template-columns: 1fr 3fr;
+}
+
+.channel-details h4 {
+  margin-bottom: 0;
+}
+
+.channel-details p {
+  margin-top: 10px;
+}
+
+#channel-logo {
+  align-self: center;
+  justify-self: center;
+  border-radius: 50%;
+  display: block;
+  width: 50%;
+}
+
+.channel-wrapper > div:nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
