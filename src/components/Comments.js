@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Comments.css";
 import { AvatarGenerator } from "random-avatar-generator";
 import LikeDislike from "./LikeDislike";
@@ -9,10 +9,12 @@ const Comments = ({ id }) => {
     comment: "",
     image: "",
   });
-  const [localstoragedetails, setlocalstoragedetails] = useState(
-    JSON.parse(window.localStorage.getItem(id)) || []
-  );
+  const [localstoragedetails, setlocalstoragedetails] = useState([]);
   const generator = new AvatarGenerator();
+
+  useEffect(() => {
+    setlocalstoragedetails(JSON.parse(window.localStorage.getItem(id)));
+  }, [localstoragedetails, id]);
 
   function handleComments(e) {
     const newObj = { ...addComment };
@@ -21,9 +23,8 @@ const Comments = ({ id }) => {
   }
 
   function handleDeleteComment(e, index) {
-    e.target.parentNode.remove()
-    localstoragedetails.splice(index, 1)
-    localStorage.setItem(id, JSON.stringify(localstoragedetails))
+    localstoragedetails.splice(index, 1);
+    localStorage.setItem(id, JSON.stringify(localstoragedetails));
   }
 
   function handleSubmit(e) {
@@ -82,7 +83,12 @@ const Comments = ({ id }) => {
               <p className="comment">{comment.comment}</p>
               <LikeDislike />
               <button className="reply">Reply</button>
-              <button onClick={(e) => handleDeleteComment(e, index)} className="delete-button">Delete</button>
+              <button
+                onClick={(e) => handleDeleteComment(e, index)}
+                className="delete-button"
+              >
+                Delete
+              </button>
             </li>
           );
         })}
