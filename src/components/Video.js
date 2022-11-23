@@ -62,7 +62,10 @@ export default function Video() {
         <Modal loadingError={loadingError} setLoadingError={setLoadingError} />
       ) : (
         <>
-          <YouTube videoId={id} opts={opts} />
+          <div className="video-container">
+            <YouTube videoId={id} opts={opts} />
+          </div>
+
           {videoDetails.map(({ snippet, statistics }, i) => {
             return (
               <div key={i}>
