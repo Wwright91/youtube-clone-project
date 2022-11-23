@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./Comments.css";
 import { AvatarGenerator } from "random-avatar-generator";
 import LikeDislike from "./LikeDislike";
@@ -12,10 +12,6 @@ const Comments = ({ id }) => {
   const [localstoragedetails, setlocalstoragedetails] = useState([]);
   const generator = new AvatarGenerator();
 
-  useEffect(() => {
-    setlocalstoragedetails(JSON.parse(window.localStorage.getItem(id)));
-  }, [localstoragedetails, id]);
-
   function handleComments(e) {
     const newObj = { ...addComment };
     newObj[e.target.id] = e.target.value;
@@ -24,6 +20,7 @@ const Comments = ({ id }) => {
 
   function handleDeleteComment(e, index) {
     localstoragedetails.splice(index, 1);
+    setlocalstoragedetails([...localstoragedetails]);
     localStorage.setItem(id, JSON.stringify(localstoragedetails));
   }
 
@@ -40,9 +37,7 @@ const Comments = ({ id }) => {
     setlocalstoragedetails(newComments);
     setAddComment({ commenter: "", comment: "" });
   }
-  // console.log(window.localStorage);
 
-  // localStorage.clear()
   return (
     <div>
       <form onSubmit={handleSubmit} className="comment-form">
