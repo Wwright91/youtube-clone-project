@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import YouTube from "react-youtube";
 import Comments from "./Comments";
-import { formatViewsCount } from "./HelperFunctions";
+import { formatViewsCount, formatDate } from "./HelperFunctions";
 import ReadMoreAndLess from "react-read-more-less";
 import Modal from "./ErrorModal";
 
@@ -99,19 +99,21 @@ export default function Video() {
                         </svg>{" "}
                         {statistics.likeCount}
                       </p>
+                      <p>Uploaded on {formatDate(snippet.publishedAt)}</p>
                     </div>
                   </div>
                 )}
-
-                <p>Uploaded on {snippet.publishedAt}</p>
                 <p>{formatViewsCount(statistics.viewCount)} views</p>
-                <ReadMoreAndLess
-                  className="read-more-content"
-                  readMoreText="Show more"
-                  readLessText="Show less"
-                >
-                  {snippet.description}
-                </ReadMoreAndLess>
+                <div className="video-description">
+                  <ReadMoreAndLess
+                    className="read-more-content"
+                    readMoreText="Show more"
+                    readLessText="Show less"
+                  >
+                    {snippet.description}
+                  </ReadMoreAndLess>
+                </div>
+
                 <p>{formatViewsCount(statistics.commentCount)} comments</p>
               </div>
             );

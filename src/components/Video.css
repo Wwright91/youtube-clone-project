@@ -2,9 +2,16 @@
   text-align: center;
   margin: 0 auto;
   width: 80%;
+  padding: 40px 20px;
+}
+
+.videopage iframe {
+  max-width: 100%;
 }
 
 .channel-wrapper {
+  max-width: 70%;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -32,7 +39,24 @@
 }
 
 .channel-wrapper > div:nth-child(2) {
-  display: flex;
+  display: grid;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.channel-wrapper > div:nth-child(2) p {
+  margin: 3px;
+}
+
+.short-text {
+  line-height: 1.4;
+  word-spacing: 0.5rem;
+}
+
+.video-description {
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 10px;
+  white-space: pre-wrap;
+  text-align: left;
 }
