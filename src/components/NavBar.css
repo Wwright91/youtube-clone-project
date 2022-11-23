@@ -39,9 +39,11 @@ header a {
   font-size: 1.3rem;
   filter: drop-shadow(5px 5px 3px #888);
 }
-header li:hover,
-.youtube-logo:hover {
+header li:hover {
   transform: scale(1.25);
+}
+.youtube-logo:hover {
+  transform: translateY(-5px);
 }
 
 header img {

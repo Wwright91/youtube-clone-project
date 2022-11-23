@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import YouTube from "react-youtube";
 import Comments from "./Comments";
 import { formatViewsCount } from "./HelperFunctions";
@@ -16,35 +16,48 @@ const opts = {
     autoplay: 0,
     // enablejsapi: 1,
   },
+  origin: "https://www.youtube.com",
 };
 
 export default function Video() {
   const { id } = useParams();
-  console.log(id);
+  const [search] = useSearchParams();
+  const channelId = search.get("channelId");
+  console.log(channelId);
   const [videoDetails, setVideoDetails] = useState([]);
   const [loadingError, setLoadingError] = useState(false);
+  const [channelDetails, setChannelDetails] = useState(null);
 
   useEffect(() => {
-    fetch(
+    const fetchVideo = fetch(
       `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${id}&key=${process.env.REACT_APP_API_KEY}`
-    )
-      .then((res) => {
-        if (!res.ok) throw new Error("I am an error");
-        return res.json();
+    );
+    const fetchChannel = fetch(
+      `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${channelId}&key=${process.env.REACT_APP_API_KEY}`
+    );
+    Promise.all([fetchVideo, fetchChannel])
+      .then((responses) => {
+        console.log(responses);
+        return Promise.all(
+          responses.map((res) => {
+            if (!res.ok) throw new Error("I am an error");
+            return res.json();
+          })
+        );
       })
-      .then((data) => {
-        // console.log(data.items)
-        setVideoDetails(data.items);
+      .then(([video, channel]) => {
+        console.log(channel.items);
+        setVideoDetails(video.items);
+        setChannelDetails(channel.items[0]);
         setLoadingError(false);
       })
+
       .catch((error) => {
         console.error(error);
         setLoadingError(true);
       });
-  }, [id]);
-
-  console.log(videoDetails);
-
+  }, [id, channelId]);
+  console.log(channelDetails);
   return (
     <div className="videopage">
       {loadingError ? (
@@ -70,6 +83,16 @@ export default function Video() {
             );
           })}
           <Comments id={id} />
+          {channelDetails && (
+            <div className="channel-details">
+              <img src={channelDetails.snippet.thumbnails.default.url} alt="" />
+              <h2>{channelDetails.snippet.localized.title}</h2>
+              <p>
+                {formatViewsCount(channelDetails.statistics.subscriberCount)}{" "}
+                subscribers
+              </p>
+            </div>
+          )}
         </>
       )}
     </div>
