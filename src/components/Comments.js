@@ -32,7 +32,6 @@ const Comments = ({ id }) => {
       ...localstoragedetails,
       { ...addComment, image: userimage },
     ];
-    // console.log(newComments);
     window.localStorage.setItem(id, JSON.stringify(newComments));
     setlocalstoragedetails(newComments);
     setAddComment({ commenter: "", comment: "" });
