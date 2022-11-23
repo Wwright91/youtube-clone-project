@@ -41,6 +41,7 @@ header a {
 }
 header li:hover {
   transform: scale(1.25);
+  text-shadow: 0px -6px 5px #ff1a01;
 }
 .youtube-logo:hover {
   transform: translateY(-5px);
