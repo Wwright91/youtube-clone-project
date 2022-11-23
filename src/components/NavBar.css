@@ -28,12 +28,11 @@ header ul {
 
 header ul li {
   display: inline-block;
-  /* padding: 0 25px; */
   transition: 0.3s ease;
 }
 
 header a {
-  color: #555;
+  color: #333;
   text-decoration: none;
   font-weight: bold;
   font-size: 1.3rem;

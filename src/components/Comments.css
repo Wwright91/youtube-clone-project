@@ -23,7 +23,6 @@ ul {
   margin-bottom: 10px;
   height: 30px;
   border-radius: 10px;
-  /* background-color: transparent; */
   color: black;
   outline: none;
 }
@@ -61,7 +60,6 @@ ul {
   width: 90%;
   max-width: 600px;
   margin: 0 auto;
-  /* margin-left: 260px; */
 }
 
 .comment {
