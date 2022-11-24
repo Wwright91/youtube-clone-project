@@ -1,0 +1,21 @@
+.categories {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.categories li {
+  display: inline-block;
+  margin-right: 10px;
+  background-color: #eee;
+  padding: 7px 15px;
+  border-radius: 3px;
+}
+
+.categories::-webkit-scrollbar {
+  display: none;
+}
+
+.categories {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

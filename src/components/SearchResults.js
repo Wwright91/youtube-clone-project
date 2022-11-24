@@ -4,11 +4,9 @@ import { useParams } from "react-router-dom";
 import Modal from "./ErrorModal";
 
 const SearchResults = () => {
+  const { input } = useParams();
   const [searchedData, setSearchedData] = useState([]);
   const [loading, setLoading] = useState(false);
-  const { input } = useParams();
-  // console.log(input)
-
   const [loadingError, setLoadingError] = useState(false);
 
   useEffect(() => {
