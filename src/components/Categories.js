@@ -1,20 +1,29 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Categories.css";
 
 const categoriesURL = `https://youtube.googleapis.com/youtube/v3/videoCategories?part=snippet&regionCode=US&key=${process.env.REACT_APP_API_KEY}`;
+const videosFromCategoryURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&key=${process.env.REACT_APP_API_KEY}`;
 
 export default function Categories() {
   const [categories, setCategories] = useState(null);
   useEffect(() => {
     fetch(categoriesURL)
       .then((res) => res.json())
-      .then((data) => setCategories(data.items));
+      .then((data) => {
+        console.log(data);
+        setCategories(data.items);
+      });
   }, []);
   return (
     <div className="categories">
       <ul>
         {categories &&
-          categories.map((cat, i) => <li key={i}>{cat.snippet.title}</li>)}
+          categories.map((cat, i) => (
+            <Link to={`category/${cat.id}`} key={i}>
+              <li>{cat.snippet.title}</li>
+            </Link>
+          ))}
       </ul>
     </div>
   );

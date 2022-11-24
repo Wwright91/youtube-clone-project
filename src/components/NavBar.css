@@ -28,7 +28,7 @@ header ul {
 
 header ul li {
   display: inline-block;
-  transition: 0.3s ease;
+  transition: 0.3s ease 80ms;
 }
 
 header a {
