@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./Categories.css";
 
 const categoriesURL = `https://youtube.googleapis.com/youtube/v3/videoCategories?part=snippet&regionCode=US&key=${process.env.REACT_APP_API_KEY}`;
-const videosFromCategoryURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&key=${process.env.REACT_APP_API_KEY}`;
 
 export default function Categories() {
   const [categories, setCategories] = useState(null);

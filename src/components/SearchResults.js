@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+
 import VideoList from "./VideoList";
 import { useParams } from "react-router-dom";
 import Modal from "./ErrorModal";
+import Categories from "./Categories";
 
 const SearchResults = () => {
   const { input } = useParams();
@@ -37,18 +39,24 @@ const SearchResults = () => {
   }, [input]);
 
   return (
-    <div className="home">
-      {loadingError ? (
-        <Modal loadingError={loadingError} setLoadingError={setLoadingError} />
-      ) : (
-        <VideoList
-          videos={searchedData}
-          kind="search"
-          loading={loading}
-          loadingError={loadingError}
-        />
-      )}
-    </div>
+    <>
+      <Categories />
+      <div className="home">
+        {loadingError ? (
+          <Modal
+            loadingError={loadingError}
+            setLoadingError={setLoadingError}
+          />
+        ) : (
+          <VideoList
+            videos={searchedData}
+            kind="search"
+            loading={loading}
+            loadingError={loadingError}
+          />
+        )}
+      </div>
+    </>
   );
 };
 

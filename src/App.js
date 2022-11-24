@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Video from "./components/Video";
 import SearchResults from "./components/SearchResults";
+import Category from "./components/Category";
 
 function App() {
   return (
@@ -13,10 +14,10 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
           <Route path="/search/:input" element={<SearchResults />} />
           <Route path="/videos/:id" element={<Video />} />
-          <Route path="/category/:id"></Route>
+          <Route path="/category/:id" element={<Category />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </Router>
     </div>
