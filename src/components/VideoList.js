@@ -5,7 +5,7 @@ import "./Home.css";
 
 const VideoList = ({ videos, kind, loading, loadingError }) => {
   return (
-    <div className="home">
+    <>
       {loading && <CardSkeleton />}
       {kind !== "popular"
         ? videos.map(({ id, snippet }, i) => {
@@ -20,11 +20,13 @@ const VideoList = ({ videos, kind, loading, loadingError }) => {
                   </div>
 
                   <h4 className="video-title">{snippet.title}</h4>
-                  <div className="details">
-                    <p>
-                      <span>{snippet.channelTitle}</span>
-                    </p>
-                  </div>
+                  {kind !== "related" && (
+                    <div className="details">
+                      <p>
+                        <span>{snippet.channelTitle}</span>
+                      </p>
+                    </div>
+                  )}
                 </div>
               </Link>
             );
@@ -54,7 +56,7 @@ const VideoList = ({ videos, kind, loading, loadingError }) => {
               </Link>
             );
           })}
-    </div>
+    </>
   );
 };
 

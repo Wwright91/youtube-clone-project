@@ -6,31 +6,47 @@ ul {
   height: 30px;
 }
 
-.comment-form input {
-  width: 50%;
-  height: 30px;
+.comment-form {
+  background-color: #eee;
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 40px;
   border-radius: 10px;
+  margin-bottom: 40px;
 }
 
-#comment,
-#commenter {
-  background-color: black;
-  color: white;
+.comment-form input {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  height: 30px;
+  border-radius: 10px;
+  color: black;
+  outline: none;
+}
+
+.comment-form input:focus {
+  border: 2px solid darkred;
 }
 
 ::placeholder {
-  color: white;
+  color: black;
   text-align: center;
 }
 
 .comment-button {
   border-radius: 50px;
-  background-color: skyblue;
+  padding: 10px 20px;
+  background-color: #0066ff;
   cursor: pointer;
+  color: white;
+  font-weight: bold;
 }
 
 .comment-button:hover {
-  background-color: lightblue;
+  background-color: #025ce3;
 }
 
 .reply,
@@ -43,8 +59,10 @@ ul {
 
 #comment-section {
   text-align: left;
-  width: 50%;
-  margin-left: 260px;
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 50px;
 }
 
 .comment {

@@ -39,7 +39,7 @@ const SearchResults = () => {
   }, [input]);
 
   return (
-    <div>
+    <div className="home">
       {loadingError ? (
         <Modal loadingError={loadingError} setLoadingError={setLoadingError} />
       ) : (
