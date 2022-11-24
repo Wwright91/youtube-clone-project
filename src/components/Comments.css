@@ -39,12 +39,14 @@ ul {
 .comment-button {
   border-radius: 50px;
   padding: 10px 20px;
-  background-color: skyblue;
+  background-color: #0066ff;
   cursor: pointer;
+  color: white;
+  font-weight: bold;
 }
 
 .comment-button:hover {
-  background-color: lightblue;
+  background-color: #025ce3;
 }
 
 .reply,
