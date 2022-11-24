@@ -23,7 +23,7 @@
 .channel-details {
   display: grid;
   text-align: left;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 5fr;
 }
 
 .channel-details h4 {
@@ -39,15 +39,13 @@
   justify-self: left;
   border-radius: 50%;
   display: block;
-  min-width: 40px;
-  max-width: 50%;
+  max-width: 50px;
+  width: 100%;
 }
 
 .channel-wrapper > div:nth-child(2) {
-  display: grid;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  text-align: left;
+  align-self: center;
 }
 .channel-wrapper > div:nth-child(2) p {
   margin: 3px;
