@@ -13,9 +13,8 @@ const Home = () => {
   useEffect(() => {
     fetch(`${popularVideosUrl}`)
       .then((res) => {
-        if (!res.ok)
-          throw new Error("Throwing Throwing")
-       return res.json()
+        if (!res.ok) throw new Error("Throwing Throwing");
+        return res.json();
       })
       .then((data) => {
         setPopularVideos(data.items);
@@ -30,10 +29,17 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      {loadingError ? <Modal loadingError={loadingError} setLoadingError={setLoadingError}/> :
-        <VideoList videos={popularVideos} kind="popular" loading={loading} loadingError={loadingError} />
-      }
+    <div className="home">
+      {loadingError ? (
+        <Modal loadingError={loadingError} setLoadingError={setLoadingError} />
+      ) : (
+        <VideoList
+          videos={popularVideos}
+          kind="popular"
+          loading={loading}
+          loadingError={loadingError}
+        />
+      )}
     </div>
   );
 };
