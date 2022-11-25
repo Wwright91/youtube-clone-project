@@ -9,6 +9,11 @@
   background-color: #eee;
   padding: 7px 15px;
   border-radius: 3px;
+  transition: 0.3s ease-in-out;
+}
+
+.categories li:hover {
+  background: #ddd;
 }
 
 .categories::-webkit-scrollbar {
