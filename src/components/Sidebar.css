@@ -1,11 +1,18 @@
 .sidebar {
-  width: 100px;
+  max-width: 100px;
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
 }
 .sidebar ul {
+  display: block;
   /* display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center; */
+  margin: 0 auto;
+  padding: 0;
+  margin-top: 35px;
 }
 .sidebar li {
   display: flex;
@@ -14,9 +21,15 @@
   align-items: center;
   background-color: #eee;
   width: 100%;
-  padding: 15px 10px 10px;
-  margin-bottom: 10px;
+  padding: 15px 5px 10px;
+  margin-bottom: 15px;
   border-radius: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+.sidebar li:hover {
+  cursor: pointer;
+  background-color: #ddd;
 }
 .sidebar li span {
   display: block;

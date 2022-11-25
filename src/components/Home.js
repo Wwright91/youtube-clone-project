@@ -33,22 +33,24 @@ const Home = () => {
   return (
     <>
       <Categories />
-      <Sidebar />
+      <div className="home-wrapper">
+        <Sidebar />
 
-      <div className="home">
-        {loadingError ? (
-          <Modal
-            loadingError={loadingError}
-            setLoadingError={setLoadingError}
-          />
-        ) : (
-          <VideoList
-            videos={popularVideos}
-            kind="popular"
-            loading={loading}
-            loadingError={loadingError}
-          />
-        )}
+        <div className="home">
+          {loadingError ? (
+            <Modal
+              loadingError={loadingError}
+              setLoadingError={setLoadingError}
+            />
+          ) : (
+            <VideoList
+              videos={popularVideos}
+              kind="popular"
+              loading={loading}
+              loadingError={loadingError}
+            />
+          )}
+        </div>
       </div>
     </>
   );
