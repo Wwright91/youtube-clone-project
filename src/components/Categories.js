@@ -19,7 +19,7 @@ export default function Categories() {
       <ul>
         {categories &&
           categories.map((cat, i) => (
-            <Link to={`category/${cat.id}`} key={i}>
+            <Link to={`/category/${cat.id}`} key={i}>
               <li>{cat.snippet.title}</li>
             </Link>
           ))}
