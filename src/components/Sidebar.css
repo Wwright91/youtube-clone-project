@@ -1,0 +1,23 @@
+.sidebar {
+  width: 100px;
+}
+.sidebar ul {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+}
+.sidebar li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+  width: 100%;
+  padding: 15px 10px 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+.sidebar li span {
+  display: block;
+}

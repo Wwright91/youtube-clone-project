@@ -3,6 +3,7 @@ import "./Home.css";
 import VideoList from "./VideoList";
 import Modal from "./ErrorModal";
 import Categories from "./Categories";
+import Sidebar from "./Sidebar";
 
 const popularVideosUrl = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=21&regionCode=US&key=${process.env.REACT_APP_API_KEY}`;
 
@@ -32,6 +33,7 @@ const Home = () => {
   return (
     <>
       <Categories />
+      <Sidebar />
 
       <div className="home">
         {loadingError ? (
