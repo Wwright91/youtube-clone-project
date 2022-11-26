@@ -1,3 +1,7 @@
+.home-wrapper {
+  display: grid;
+  grid-template-columns: 10% 90%;
+}
 .home {
   width: 85%;
   margin: 0 auto;
@@ -73,5 +77,16 @@
   .home {
     grid-template-columns: 1fr;
     width: 95%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .home-wrapper {
+    display: block;
+  }
+  .sidebar {
+    display: none;
+  }
+  .home {
+    margin: 0 auto;
   }
 }

@@ -1,20 +1,21 @@
 import { useEffect, useState } from "react";
-import VideoList from "./VideoList";
 import { useParams } from "react-router-dom";
+
+import VideoList from "./VideoList";
 import Modal from "./ErrorModal";
+import Categories from "./Categories";
+import Sidebar from "./Sidebar";
 
 const SearchResults = () => {
+  const { input } = useParams();
   const [searchedData, setSearchedData] = useState([]);
   const [loading, setLoading] = useState(false);
-  const { input } = useParams();
-  // console.log(input)
-
   const [loadingError, setLoadingError] = useState(false);
 
   useEffect(() => {
     setLoading(true);
     fetch(
-      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${input}&key=${process.env.REACT_APP_API_KEY}`
+      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=22&q=${input}&key=${process.env.REACT_APP_API_KEY}`
     )
       .then((res) => {
         console.log(res);
@@ -39,18 +40,27 @@ const SearchResults = () => {
   }, [input]);
 
   return (
-    <div className="home">
-      {loadingError ? (
-        <Modal loadingError={loadingError} setLoadingError={setLoadingError} />
-      ) : (
-        <VideoList
-          videos={searchedData}
-          kind="search"
-          loading={loading}
-          loadingError={loadingError}
-        />
-      )}
-    </div>
+    <>
+      <Categories />
+      <div className="home-wrapper">
+        <Sidebar />
+        <div className="home">
+          {loadingError ? (
+            <Modal
+              loadingError={loadingError}
+              setLoadingError={setLoadingError}
+            />
+          ) : (
+            <VideoList
+              videos={searchedData}
+              kind="search"
+              loading={loading}
+              loadingError={loadingError}
+            />
+          )}
+        </div>
+      </div>
+    </>
   );
 };
 

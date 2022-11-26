@@ -6,7 +6,7 @@ header {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   align-items: center;
-  padding: 15px 30px;
+  padding: 10px 25px;
   box-sizing: border-box;
   position: sticky;
   top: 0;
@@ -28,7 +28,7 @@ header ul {
 
 header ul li {
   display: inline-block;
-  transition: 0.3s ease;
+  transition: 0.3s ease-in-out 80ms;
 }
 
 header a {
