@@ -1,6 +1,8 @@
 # YouTube Clone Project
 
-![youtube](https://c4.wallpaperflare.com/wallpaper/183/910/371/google-ygoogle-youtube-logo-wallpaper-preview.jpg)
+<img width="7000" alt="Screen Shot 2022-11-26 at 2 02 24 AM" src="https://user-images.githubusercontent.com/83052118/204076705-4b32dac6-d52f-49df-bd1e-f0101d835ee5.png">
+
+---
 
 ## [Trello Link](https://trello.com/b/rFpuVYXA/youtube-project)
 
