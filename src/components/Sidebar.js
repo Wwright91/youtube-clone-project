@@ -19,11 +19,12 @@ export default function Sidebar() {
             <span>Home</span>
           </li>
         </Link>
-
-        <li>
-          <FontAwesomeIcon icon={faMusic} />
-          <span>Music</span>
-        </li>
+        <Link to="/category/10">
+          <li>
+            <FontAwesomeIcon icon={faMusic} />
+            <span>Music</span>
+          </li>
+        </Link>
         <Link to="/category/30">
           <li>
             <FontAwesomeIcon icon={faFilm} />
