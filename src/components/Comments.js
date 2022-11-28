@@ -9,7 +9,9 @@ const Comments = ({ id }) => {
     comment: "",
     image: "",
   });
-  const [localstoragedetails, setlocalstoragedetails] = useState([]);
+  const [localstoragedetails, setlocalstoragedetails] = useState(
+    JSON.parse(window.localStorage.getItem(id)) || []
+  );
   const generator = new AvatarGenerator();
 
   function handleComments(e) {
