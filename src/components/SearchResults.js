@@ -8,14 +8,20 @@ import Sidebar from "./Sidebar";
 
 const SearchResults = () => {
   const { input } = useParams();
+  const { num } = useParams();
   const [searchedData, setSearchedData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [loadingError, setLoadingError] = useState(false);
 
+  // const [maxResults, setMaxResults] = useState("");
+
+  // setMaxResults(maxResults);
+  // console.log(maxResults);
+
   useEffect(() => {
     setLoading(true);
     fetch(
-      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=22&q=${input}&key=${process.env.REACT_APP_API_KEY}`
+      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=${num}&q=${input}&key=${process.env.REACT_APP_API_KEY}`
     )
       .then((res) => {
         console.log(res);
