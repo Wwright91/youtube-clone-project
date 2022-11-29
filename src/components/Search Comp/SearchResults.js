@@ -16,30 +16,57 @@ const SearchResults = () => {
   // console.log(maxResults);
 
   useEffect(() => {
-    setLoading(true);
-    fetch(
-      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=${num}&q=${input}&key=${process.env.REACT_APP_API_KEY}`
-    )
-      .then((res) => {
-        console.log(res);
-        if (!res.ok) throw new Error("Error in Search Results Comp");
-        return res.json();
-      })
-      .then((data) => {
-        console.log(data.items);
-        data = data.items.filter(
-          (item) => !item.snippet.thumbnails.high.url.endsWith("-mo")
-        );
+    if (num) {
+      setLoading(true);
+      fetch(
+        `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=${num}&q=${input}&key=${process.env.REACT_APP_API_KEY}`
+      )
+        .then((res) => {
+          console.log(res);
+          if (!res.ok) throw new Error("Error in Search Results Comp");
+          return res.json();
+        })
+        .then((data) => {
+          console.log(data.items);
+          data = data.items.filter(
+            (item) => !item.snippet.thumbnails.high.url.endsWith("-mo")
+          );
 
-        setSearchedData(data);
-        setLoading(false);
-        setLoadingError(false);
-      })
-      .catch((error) => {
-        console.error(error);
-        setLoading(false);
-        setLoadingError(true);
-      });
+          setSearchedData(data);
+          setLoading(false);
+          setLoadingError(false);
+        })
+        .catch((error) => {
+          console.error(error);
+          setLoading(false);
+          setLoadingError(true);
+        });
+    } else {
+      setLoading(true);
+      fetch(
+        `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=24&q=${input}&key=${process.env.REACT_APP_API_KEY}`
+      )
+        .then((res) => {
+          console.log(res);
+          if (!res.ok) throw new Error("Error in Search Results Comp");
+          return res.json();
+        })
+        .then((data) => {
+          console.log(data.items);
+          data = data.items.filter(
+            (item) => !item.snippet.thumbnails.high.url.endsWith("-mo")
+          );
+
+          setSearchedData(data);
+          setLoading(false);
+          setLoadingError(false);
+        })
+        .catch((error) => {
+          console.error(error);
+          setLoading(false);
+          setLoadingError(true);
+        });
+    }
   }, [input, num]);
 
   return (

@@ -9,10 +9,13 @@ const Searchbar = () => {
   let navigate = useNavigate();
 
   function handleSubmit(e) {
-    e.preventDefault();
-    navigate(`/search/${inputValue}/${maxResults}`);
+    // e.preventDefault();
+    if (!maxResults.length) {
+      navigate(`/search/${inputValue}`);
+    } else {
+      navigate(`/search/${inputValue}/${maxResults}`);
+    }
     setInputValue("");
-    setMaxResults("");
   }
 
   return (
