@@ -5,9 +5,13 @@ import "./MobileMenu.css";
 const MobileMenu = ({ setShowMobileMenu }) => {
   return (
     <div className="mobile-menu-container">
-      {/* <div className="close-menu-container">
-        <FontAwesomeIcon icon={faCircleXmark} id="close-menu" />
-      </div> */}
+      <div className="close-menu-container">
+        <FontAwesomeIcon
+          icon={faCircleXmark}
+          id="close-menu"
+          onClick={() => setShowMobileMenu(false)}
+        />
+      </div>
       <nav id="mobile-menu">
         <ul>
           <li>
