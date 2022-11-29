@@ -78,7 +78,6 @@ const Comments = ({ id }) => {
               </h3>
               <p className="comment">{comment.comment}</p>
               <LikeDislike />
-              <button className="reply">Reply</button>
               <button
                 onClick={(e) => handleDeleteComment(e, index)}
                 className="delete-button"
