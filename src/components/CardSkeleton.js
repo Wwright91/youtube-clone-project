@@ -7,8 +7,8 @@ export default function CardSkeleton({ cards }) {
     <>
       {Array(12)
         .fill(0)
-        .map((x) => (
-          <div className="card">
+        .map((x, i) => (
+          <div className="card" key={i}>
             <div className="img-wrapper">
               <Skeleton width={320} height={180} borderRadius="10px" />
             </div>
