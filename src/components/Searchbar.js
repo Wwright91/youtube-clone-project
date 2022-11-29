@@ -16,7 +16,7 @@ const Searchbar = () => {
   }
 
   return (
-    <div>
+    <>
       <form onSubmit={handleSubmit} className="search-form">
         <div className="select-wrap">
           <label htmlFor="max-results">Max Results</label>
@@ -42,7 +42,7 @@ const Searchbar = () => {
         ></input>
         <button id="magnifying-glass">&#x1F50D;</button>
       </form>
-    </div>
+    </>
   );
 };
 

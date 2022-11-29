@@ -3,8 +3,8 @@ header {
   background-color: white;
   color: rgb(0, 0, 0);
   text-align: left;
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  display: flex;
+  /* grid-template-columns: 1fr 3fr 1fr; */
   align-items: center;
   padding: 10px 25px;
   box-sizing: border-box;
@@ -29,6 +29,7 @@ header ul {
 header ul li {
   display: inline-block;
   transition: 0.3s ease-in-out 80ms;
+  margin-right: 15px;
 }
 
 header a {
@@ -50,6 +51,17 @@ header img {
   height: 25px;
 }
 
+#hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+#hamburger:hover {
+  transform: scale(1.1);
+}
+
 @media screen and (max-width: 965px) {
   .search-form {
     width: 100%;
@@ -63,12 +75,33 @@ header img {
     font-size: 1.1rem;
   }
 }
-@media screen and (max-width: 700px) {
+/* @media screen and (max-width: 700px) {
   .youtube-logo {
     display: none;
   }
   header {
     grid-template-columns: 5fr 1fr;
     padding: 15px 0px;
+  }
+} */
+
+@media screen and (max-width: 700px) {
+  #desktop-menu {
+    display: none;
+  }
+  #hamburger {
+    display: block;
+  }
+  .youtube-logo {
+    padding-left: 0;
+  }
+
+  .youtube-logo img {
+    /* width: 90%; */
+    height: 18px;
+    margin-right: 3px;
+  }
+  header {
+    padding: 10px 10px;
   }
 }

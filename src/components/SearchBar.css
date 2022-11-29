@@ -1,5 +1,6 @@
 .search-form {
   max-width: 100%;
+  flex: 1;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -54,18 +55,15 @@ select:focus-visible {
 }
 
 .search-form button {
-  padding: 0px 20px;
   color: white;
   font-weight: bold;
   font-size: 1.05rem;
   margin-left: 5px;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
-  border-radius: 20px;
   position: relative;
   background-color: transparent;
-  right: 65px;
+  right: 50px;
 }
 
 .search-form button:hover {
