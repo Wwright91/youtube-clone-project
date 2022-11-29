@@ -1,22 +1,22 @@
 import { useState } from "react";
 
 function LikeDislike() {
-  const [likeCount, setLikeCount] = useState(0);
-  const [dislikeCount, setDislikeCount] = useState(0);
+  const [likeCount, setLikeCount] = useState("");
+  const [dislikeCount, setDislikeCount] = useState("");
   const [likeactive, setLikeactive] = useState(false);
   const [dislikeactive, setDislikeactive] = useState(false);
 
   function handleLikes() {
     if (likeactive) {
       setLikeactive(false);
-      setLikeCount(likeCount - 1);
+      setLikeCount("");
     } else {
       setLikeactive(true);
-      setLikeCount(likeCount + 1);
+      setLikeCount(1);
       if (dislikeactive) {
         setDislikeactive(false);
-        setLikeCount(likeCount + 1);
-        setDislikeCount(dislikeCount - 1);
+        setLikeCount(1);
+        setDislikeCount("");
       }
     }
   }
@@ -24,14 +24,14 @@ function LikeDislike() {
   function handleDislikes() {
     if (dislikeactive) {
       setDislikeactive(false);
-      setDislikeCount(dislikeCount - 1);
+      setDislikeCount("");
     } else {
       setDislikeactive(true);
-      setDislikeCount(dislikeCount + 1);
+      setDislikeCount(1);
       if (likeactive) {
         setLikeactive(false);
-        setDislikeCount(dislikeCount + 1);
-        setLikeCount(likeCount - 1);
+        setDislikeCount(1);
+        setLikeCount("");
       }
     }
   }
