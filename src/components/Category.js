@@ -11,7 +11,10 @@ export default function Category() {
 
   useEffect(() => {
     fetch(videosFromCategoryURL + `&videoCategoryId=${id}`)
-      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        return res.json();
+      })
       .then((data) => {
         console.log(data);
         setVideos(data.items);

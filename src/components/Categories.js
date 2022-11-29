@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./Categories.css";
 
 const categoriesURL = `https://youtube.googleapis.com/youtube/v3/videoCategories?part=snippet&regionCode=US&key=${process.env.REACT_APP_API_KEY}`;
+const excludedIds = ["18", "21"];
 
 export default function Categories() {
   const [categories, setCategories] = useState(null);
@@ -11,6 +12,9 @@ export default function Categories() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        data.items = data.items.filter(
+          (item) => !excludedIds.includes(item.id)
+        );
         setCategories(data.items);
       });
   }, []);
