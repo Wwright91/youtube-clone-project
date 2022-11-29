@@ -16,13 +16,16 @@
   justify-content: center;
   width: 73px;
   height: 35px;
+  margin-right: 5px;
 }
 
 .select-wrap label {
   position: absolute;
-  top: -14px;
-  font-size: 10px;
+  top: -5px;
+  font-size: 9px;
   outline: none;
+  z-index: 100;
+  background: white;
 }
 
 .select-wrap select {
@@ -34,11 +37,11 @@ select:focus-visible {
 
 .search-form input {
   width: 60%;
+  min-width: 150px;
   height: 35px;
   border-radius: 20px;
   border: 1px solid #999;
   transition: 0.2s ease-in-out;
-  /* position: relative; */
 }
 
 .search-form input::placeholder {

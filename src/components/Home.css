@@ -66,7 +66,7 @@
   font-weight: bold;
 }
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1250px) {
   .home {
     grid-template-columns: 1fr 1fr;
     width: 95%;
