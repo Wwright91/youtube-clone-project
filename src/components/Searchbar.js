@@ -18,16 +18,30 @@ const Searchbar = () => {
   return (
     <div>
       <form onSubmit={handleSubmit} className="search-form">
-        <label htmlFor="max-results">Max Results</label>
-        <select
-          id="max-results"
-          onChange={(e) => setMaxResults(e.target.value)}
-        >
-          <option value="24"></option>
-          <option value="5">5</option>
-          <option value="15">15</option>
-          <option value="50">50</option>
-        </select>
+        <div className="select-wrap">
+          <label>Max Results</label>
+
+          <select
+            name="max-results"
+            onChange={(e) => setMaxResults(e.target.value)}
+          >
+            <option value="22">Default</option>
+            <option value="5">5</option>
+            <option value="15">15</option>
+            <option value="50">50</option>
+          </select>
+        </div>
+
+        {/* <div class="select-wrap">
+          <label>Color</label>
+          <select name="color" style="width: 100%;">
+            <option value="">---</option>
+            <option value="yellow">Yellow</option>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+          </select>
+        </div> */}
+
         <input
           type="text"
           value={inputValue}
