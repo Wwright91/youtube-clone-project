@@ -26,7 +26,7 @@ export default function Video() {
   const { id } = useParams();
   const [search] = useSearchParams();
   const channelId = search.get("channelId");
-  const [videoDetails, setVideoDetails] = useState([]);
+  const [videoDetails, setVideoDetails] = useState(null);
   const [loadingError, setLoadingError] = useState(false);
   const [channelDetails, setChannelDetails] = useState(null);
   const [relatedVids, setRelatedVids] = useState(null);
@@ -55,8 +55,8 @@ export default function Video() {
       })
       .then(([video, channel, relVids]) => {
         console.log("video", video);
-        console.log(channel.items);
-        console.log(relVids.items);
+        console.log("channel", channel.items);
+        console.log("related videos", relVids.items);
         setVideoDetails(video.items);
         setChannelDetails(channel.items[0]);
         setRelatedVids(relVids.items);
@@ -68,7 +68,7 @@ export default function Video() {
         setLoadingError(true);
       });
   }, [id, channelId]);
-  console.log("relatedVids", relatedVids);
+  console.log("video details", videoDetails);
   return (
     <div className="videopage">
       {loadingError ? (
@@ -81,52 +81,61 @@ export default function Video() {
 
           <div className="details-relvids-wrapper">
             <div className="channel-details-and-comments">
-              {videoDetails.map(({ snippet, statistics }, i) => {
-                return (
-                  <div key={i}>
-                    <h2 className="video-title">{snippet.title}</h2>
-                    {channelDetails && (
-                      <div className="channel-wrapper">
-                        <div className="channel-details">
-                          <img
-                            src={channelDetails.snippet.thumbnails.default.url}
-                            alt="channgel logo"
-                            id="channel-logo"
-                          />
+              {videoDetails &&
+                videoDetails.map(({ snippet, statistics }, i) => {
+                  return (
+                    <div key={i}>
+                      <h2 className="video-title">{snippet.title}</h2>
+                      {channelDetails && (
+                        <div className="channel-wrapper">
+                          <div className="channel-details">
+                            <img
+                              src={
+                                channelDetails.snippet.thumbnails.default.url
+                              }
+                              alt="channgel logo"
+                              id="channel-logo"
+                            />
+                            <div>
+                              <h4>{channelDetails.snippet.localized.title}</h4>
+                              <p>
+                                {formatViewsCount(
+                                  channelDetails.statistics.subscriberCount
+                                )}{" "}
+                                subscribers
+                              </p>
+                            </div>
+                          </div>
                           <div>
-                            <h4>{channelDetails.snippet.localized.title}</h4>
                             <p>
-                              {formatViewsCount(
-                                channelDetails.statistics.subscriberCount
-                              )}{" "}
-                              subscribers
+                              <FontAwesomeIcon icon={faThumbsUp} />{" "}
+                              {statistics.likeCount}
                             </p>
+                            <p>Uploaded on {formatDate(snippet.publishedAt)}</p>
                           </div>
                         </div>
-                        <div>
-                          <p>
-                            <FontAwesomeIcon icon={faThumbsUp} />{" "}
-                            {statistics.likeCount}
-                          </p>
-                          <p>Uploaded on {formatDate(snippet.publishedAt)}</p>
-                        </div>
+                      )}
+                      {statistics.viewCount ? (
+                        <p>{formatViewsCount(statistics.viewCount)} views</p>
+                      ) : (
+                        <p>404 views </p>
+                      )}
+                      <div className="video-description">
+                        <ReadMoreAndLess
+                          className="read-more-content"
+                          readMoreText="Show more"
+                          readLessText="Show less"
+                        >
+                          {snippet.description}
+                        </ReadMoreAndLess>
                       </div>
-                    )}
-                    <p>{formatViewsCount(statistics.viewCount)} views</p>
-                    <div className="video-description">
-                      <ReadMoreAndLess
-                        className="read-more-content"
-                        readMoreText="Show more"
-                        readLessText="Show less"
-                      >
-                        {snippet.description}
-                      </ReadMoreAndLess>
-                    </div>
 
-                    <p>{formatViewsCount(statistics.commentCount)} comments</p>
-                  </div>
-                );
-              })}
+                      <p>
+                        {formatViewsCount(statistics.commentCount)} comments
+                      </p>
+                    </div>
+                  );
+                })}
 
               <Comments id={id} />
             </div>
