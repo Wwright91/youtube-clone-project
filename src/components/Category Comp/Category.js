@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Categories from "./Categories";
-import Sidebar from "./Sidebar";
+import Categories from "../Category Comp/Categories";
+import Sidebar from "../Home Comp/Sidebar";
+import VideoList from "../Video Comp/VideoList";
 
-import VideoList from "./VideoList";
 const videosFromCategoryURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&regionCode=US&maxResults=21&key=${process.env.REACT_APP_API_KEY}`;
 export default function Category() {
   const { id } = useParams();

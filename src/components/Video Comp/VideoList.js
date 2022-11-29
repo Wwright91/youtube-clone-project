@@ -1,7 +1,7 @@
-import CardSkeleton from "./CardSkeleton";
-import { formatDuration, formatViewsCount } from "./HelperFunctions";
+import CardSkeleton from "../Home Comp/CardSkeleton";
+import { formatDuration, formatViewsCount } from "../Home Comp/HelperFunctions";
 import { Link } from "react-router-dom";
-import "./Home.css";
+import "../Home Comp/Home.css";
 
 const VideoList = ({ videos, kind, loading, loadingError }) => {
   return (

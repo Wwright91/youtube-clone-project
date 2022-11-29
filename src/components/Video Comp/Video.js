@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import YouTube from "react-youtube";
 import Comments from "./Comments";
-import { formatViewsCount, formatDate } from "./HelperFunctions";
+import { formatViewsCount, formatDate } from "../Home Comp/HelperFunctions";
 import ReadMoreAndLess from "react-read-more-less";
-import Modal from "./ErrorModal";
+import Modal from "../Error Comp/ErrorModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 

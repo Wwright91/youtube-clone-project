@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import NavBar from "./components/NavBar";
-import Home from "./components/Home";
-import About from "./components/About";
-import Video from "./components/Video";
-import SearchResults from "./components/SearchResults";
-import Category from "./components/Category";
+import NavBar from "./components/Home Comp/NavBar";
+import Home from "./components/Home Comp/Home";
+import About from "./components/About Comp/About";
+import Video from "./components/Video Comp/Video";
+import SearchResults from "./components/Search Comp/SearchResults";
+import Category from "./components/Category Comp/Category";
 
 function App() {
   return (

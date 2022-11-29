@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import VideoList from "./VideoList";
-import Modal from "./ErrorModal";
-import Categories from "./Categories";
-import Sidebar from "./Sidebar";
+import VideoList from "../Video Comp/VideoList";
+import Modal from "../Error Comp/ErrorModal";
+import Categories from "../Category Comp/Categories";
+import Sidebar from "../Home Comp/Sidebar";
 
 const SearchResults = () => {
   const { input } = useParams();
@@ -13,9 +13,6 @@ const SearchResults = () => {
   const [loading, setLoading] = useState(false);
   const [loadingError, setLoadingError] = useState(false);
 
-  // const [maxResults, setMaxResults] = useState("");
-
-  // setMaxResults(maxResults);
   // console.log(maxResults);
 
   useEffect(() => {
