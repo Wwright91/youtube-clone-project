@@ -43,7 +43,7 @@ const SearchResults = () => {
         setLoading(false);
         setLoadingError(true);
       });
-  }, [input]);
+  }, [input, num]);
 
   return (
     <>

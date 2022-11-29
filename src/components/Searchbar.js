@@ -15,8 +15,6 @@ const Searchbar = () => {
     setMaxResults("");
   }
 
-  // console.log(maxResults);
-
   return (
     <div>
       <form onSubmit={handleSubmit} className="search-form">
