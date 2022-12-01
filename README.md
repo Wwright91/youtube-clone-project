@@ -6,6 +6,8 @@
 
 ## [Trello Link](https://trello.com/b/rFpuVYXA/youtube-project)
 
+## [Netlify Link](https://youtube-clone-bo-wisdom.netlify.app/)
+
 ## Coders
 
 - ## Bo Latt | [Github](https://github.com/bolattt)
